@@ -16,7 +16,6 @@ public class FoodTruckApp {
 	private void run() {
 
 		System.out.println("Hello, welcome to the food truck application.");
-	
 
 		for (int i = 0; i < foodTrucks.length; i++) {
 			System.out.println("enter truck name");
@@ -57,7 +56,7 @@ public class FoodTruckApp {
 			choice = kb.nextInt();
 			if (choice == 1) {
 				for (int i = 0; i < foodTrucks.length; i++) {
-					if(foodTrucks[i]== null) {
+					if (foodTrucks[i] == null) {
 						break;
 					}
 					System.out.println(foodTrucks[i].toString());
@@ -68,6 +67,9 @@ public class FoodTruckApp {
 			} else if (choice == 2) {
 				// int[] ratings = new int[foodTrucks.length];
 				for (int i = 0; i < foodTrucks.length; i++) {
+					if (foodTrucks[i] == null) {
+						break;
+					}
 					ratings[i] = foodTrucks[i].getRating();
 
 				}
@@ -81,15 +83,18 @@ public class FoodTruckApp {
 			} else if (choice == 3) {
 				// int[] ratings = new int[foodTrucks.length];
 				int largest = ratings[0];
-int bestTruck = 0;
+				int bestTruck = 0;
 				for (int i = 0; i < foodTrucks.length; i++) {
+					if (foodTrucks[i] == null) {
+						break;
+					}
 					ratings[i] = foodTrucks[i].getRating();
 					if (ratings[i] > largest) {
 						largest = ratings[i];
 						bestTruck = i;
 
 					}
-					
+
 				}
 				System.out.println(largest);
 				System.out.println(foodTrucks[bestTruck].toString());
